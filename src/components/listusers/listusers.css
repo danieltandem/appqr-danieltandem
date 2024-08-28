@@ -1,0 +1,193 @@
+.h1User {
+  text-align: center;
+  padding: 10px;
+}
+
+.listado {
+  width: 100%;
+  display: flex;
+  gap: 1px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.personal {
+  text-align: center;
+  padding: 35px;
+  margin: 2em;
+  border: var(--btn-border-doble-2) var(--color-secondary);
+  border-radius: 10%;
+}
+
+.img-personal {
+  overflow: hidden;
+  cursor: auto;
+}
+
+
+.highlight {
+  background-color: var(--color-tertiary);
+  border: 1px solid #2a1f1f;
+  box-shadow: 4px 4px 4px 4px;
+}
+
+.juntos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  vertical-align: middle; /* Add this */
+}
+.juntos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.juntos > * {
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+.buscador {
+  flex-grow: 1; /* Add this to make the Buscador component take up the remaining space */
+}
+/* MODAL
+//////////////////////////// */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 800px;
+  max-height: 90%; /* Ajusta la altura máxima */
+  overflow-y: auto;
+  position: relative;
+}
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.name-input-container,
+.email-input-container,
+.password-input-container,
+.confirm-password-input-container {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.password-input-container {
+  position: relative;
+}
+.toggle-password-button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.validacion-contraseña {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 200px;
+}
+.validacion-contraseña span {
+  display: block;
+  margin-bottom: 10px;
+}
+.submit-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.submit-button:hover {
+  background-color: #3E8E41;
+}
+.input-register {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 75%;
+}
+.input-register:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* Estilo para el botón de cerrar */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.close-button {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 3px;
+  background-color: transparent;
+  font-size: var(--font-l);
+  letter-spacing: var(--letter-space);
+  margin-top: -2%;
+  transition: 0.1s ease;
+  text-transform: uppercase;
+  text-shadow: 0.5px 1px 4px #454545;
+}
+.icon-role-container{
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
+  width: 70px;
+  height: 85px;
+  background-color: transparent;
+  border: none;
+}

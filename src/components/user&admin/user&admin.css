@@ -1,0 +1,19 @@
+.user {
+  background-color: rgb(133, 133, 133);
+  text-align: center;
+  border: var(--btn-border-doble-2) var(--color-secondary);
+  border-radius: var(--btn-radius-1);
+  margin: 12px;
+  padding: 10px;
+  margin: auto;
+  width: 85%;
+  padding: 2em;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+.piolin{
+  height: 60px;
+  width: 40%;
+  justify-content: center;
+  font-size: var(--font-xl);
+}

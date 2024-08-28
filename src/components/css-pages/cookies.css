@@ -1,0 +1,65 @@
+/* src/components/cookies.css */
+
+.cookies-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  color: var(--color-primary);
+  font-family: var(--font-title);
+  margin-bottom: 15px;
+}
+
+p, li {
+  color: var(--color-primary);
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-family: var(--font-text);
+}
+
+ul {
+  list-style: disc inside;
+  margin-left: 20px;
+}
+
+a {
+  color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+  .legal-container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-family: var(--font-title);
+  }
+
+  h2 {
+    font-family: var(--font-title);
+  }
+
+  p, li {
+    font-family: var(--font-text);
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-family: var(--font-title);
+  }
+
+  h2 {
+    font-family: var(--font-title);
+  }
+
+  p, li {
+    font-family: var(--font-text);
+  }
+}

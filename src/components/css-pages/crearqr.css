@@ -1,0 +1,190 @@
+.container {
+  margin-top: 7em;
+  padding: 30px;
+  margin-left: 7em;
+  margin-right: 7em;
+  margin-bottom: 6em;
+}
+.layout {
+/* width: 1366px; */
+/* height: 768px; */
+display: grid;
+grid:
+  "contenido visualizacion" / 3fr 1fr;
+gap: 150px;
+justify-content: center;
+align-content: start;
+}
+.visualizacion {
+grid-area: visualizacion;
+border: var(--color-secondary) var(--btn-border-solid-2);
+border-radius: var(--btn-radius-1);
+padding-top: 30px;
+padding-bottom: 30px;
+width: 400px ;
+text-align: center;
+box-shadow: black 2px 2px 4px 2px;
+background-color: var(--bg-color);
+}
+.contenido {
+  grid-area: contenido;
+}
+.patata{
+border: var(--color-secondary) var(--btn-border-solid-2);
+border-radius: var(--btn-radius-1);
+padding: 30px;
+text-align: center;
+box-shadow: black 6px 6px 12px 3px;
+background-color: var(--bg-color);
+width: 500px ;
+}
+.personalizar{
+border: var(--color-secondary) var(--btn-border-solid-2);
+border-radius: var(--btn-radius-1);
+padding: 30px;
+text-align: center;
+margin-top: 40px;
+box-shadow: black 6px 6px 12px 3px;
+background-color: var(--bg-color);
+width: 500px ;
+}
+.qrimg{
+margin: 30px;
+border: var(--color-secondary) var(--btn-border-solid-1);
+border-radius: var(--btn-radius-1);
+padding: 10px;
+width: 110%;
+height:110%;
+background-color: var(--bg-color);
+}
+h2{
+font-family: var(--font-title);
+font-size: var(--font-l);
+font-style: italic;
+}
+label{
+font-family: var(--font-text);
+text-shadow: 1px 1px 1px  black;
+}
+.name{
+  border: var(--color-secondary) var(--btn-border-solid-1);
+  border-radius: var(--btn-radius-1);
+  box-shadow: 2px 2px 2px 2px black;
+  width: 300px;
+  margin-left: 45px;
+  font-family: var(--font-text);
+}
+.contenido2{
+  border: var(--color-secondary) var(--btn-border-solid-1);
+  border-radius: var(--btn-radius-1);
+  box-shadow: 2px 2px 2px 2px black;
+  width: 300px;
+  margin-left: 45px;
+  font-family: var(--font-text);
+  margin-bottom: 70px;
+}
+#nombreQR{
+  border: var(--color-secondary) var(--btn-border-solid-1)!important;
+  border-radius: var(--btn-radius-1);
+  box-shadow: 2px 2px 2px 2px black;
+  font-family: var(--font-text);
+  width: 270px;
+  outline: none;
+  text-align: center;
+  height: 30px;
+}
+#tipo{
+  border: var(--color-secondary) var(--btn-border-solid-1);
+  border-radius: var(--btn-radius-1);
+  box-shadow: 2px 2px 2px 2px black;
+  font-family: var(--font-text);
+  outline: none;
+  height: 70px;
+  width: 280px;
+}
+
+.txtNameQr{
+  display: block;
+  margin-left: 17%;
+  resize: none;
+}
+label[for="tipo"] {
+  font-family: var(--font-text);
+  font-size: var(--font-s);
+  font-weight: 600;
+  color: var(--text-color-2);
+  background-color: var(--color-secondary);
+  display: inline-block;
+  transition: all .5s;
+  cursor: pointer;
+  padding: 8px 23px !important;
+  text-transform: uppercase;
+  width: fit-content;
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 2%;
+  border-radius: var(--btn-radius-1);
+}
+.flex-container {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
+.info {
+  position: fixed;
+  top: 10px; /* adjust the value to move the button up or down */
+  right: 10px;
+  z-index: 2;/* Agrega un margen entre los elementos */
+}
+.h2h2{
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.modale{
+text-align: left;
+}
+.h2{
+  text-decoration: underline;
+}
+.mapa{
+  border: double 5px var(--color-secondary);
+  margin: 10px;
+}
+#nombreQR{
+  margin-left: 18%;
+}
+
+@media (max-width: 1024px){
+  .layout{
+    height: 900px;
+    gap: 70px;
+  }
+  .qrimg{
+    margin-top: 15%;
+  }
+}
+@media (max-width: 500px){
+  .layout{
+    grid-template-areas: "contenido" "visualizacion";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,1fr);
+    row-gap: 0;
+    height: 1700px;
+  }
+  .visualizacion{
+    width: 380px;
+    margin-right: 15%;
+    margin-top: 10%;
+  }
+  .patata{
+    width: 380px;
+    margin-right: 15%;
+  }
+  .patata .txtNameQr{
+    margin-left: 6%;
+  }
+  .personalizar{
+    width: 380px;
+    margin-right: 15%;
+  }
+}

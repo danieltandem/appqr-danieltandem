@@ -1,0 +1,35 @@
+.changeName,
+.changePassword {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+.changePasswordInput{
+  margin-left: 50px;
+}
+
+.changeNameInput[required]:invalid,
+.changePasswordInput[required]:invalid {
+  border: 1px solid var(--color-secondary);
+  
+}
+
+/* Tooltip */
+.changeNameInput[required]:invalid:focus::after,
+.changePasswordInput[required]:invalid:focus::after {
+  content: attr(title);
+  position: absolute;
+  background-color: black;
+  padding: 5px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1;
+  opacity: 1;
+}
+
+.changeNameInput[required]:invalid::after,
+.changePasswordInput[required]:invalid::after {
+  opacity: 0;
+}

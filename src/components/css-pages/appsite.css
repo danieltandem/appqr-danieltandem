@@ -1,0 +1,44 @@
+.appSiteSelection {
+  width: 90%;
+  display: grid;
+  grid:
+    "ColumnSite1 ColumnSite2" 1fr
+    / 1fr 1fr;
+  gap: 10px;
+  position: relative;
+  margin: 0 auto;
+}
+.ColumnSite1 {
+  grid-area: ColumnSite1;
+  text-align: center;
+  border: var(--btn-border-doble-2) var(--color-secondary);
+  border-radius: var(--btn-radius-1);
+  margin: 11.5px;
+  padding: 10px;
+}
+.ColumnSite2 {
+  grid-area: ColumnSite2;
+  text-align: center;
+  border: var(--btn-border-doble-2) var(--color-secondary);
+  border-radius: var(--btn-radius-1);
+  margin: 11.5px;
+  padding: 10px;
+}
+.btnLarge{
+  width: 50%;
+  height: 50px;
+  font-size: var(--font-l);
+  justify-content: center;
+}
+.profileName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 10px;
+  margin: 10px;
+}
+.namePerfil {
+  margin-left: 10px;
+  font-size: var(--font-l);
+}

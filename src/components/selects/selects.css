@@ -1,0 +1,95 @@
+/* ///////////////////////////////////////////////////SELECTORES/////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////SELECTORES/////////////////////////////////////////////////// */
+.sel {
+  display: inline-block;
+  margin: 3em 2em;
+  width: 350px;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+}
+.sel::before {
+  position: absolute;
+  content: "\f063";
+  color: #fff;
+  right: 20px;
+  top: calc(50% - 0.5em);
+}
+.sel.active::before {
+  transform: rotateX(-180deg);
+}
+.sel__placeholder {
+  display: block;
+  color: var(--color-primary);
+  font-size: var(--font-m);
+  padding: 0.2em 0.5em;
+  text-align: left;
+  pointer-events: none;
+  user-select: none;
+  visibility: visible;
+}
+.sel.active .sel__placeholder {
+  visibility: hidden;
+}
+.sel__placeholder::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.2em 0.5em;
+  content: attr(data-placeholder);
+  visibility: hidden;
+}
+.sel.active .sel__placeholder::before {
+  visibility: visible;
+}
+.sel__box {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: -4px;
+  display: none;
+  list-style-type: none;
+  text-align: left;
+  background-color: #fff;
+  width: calc(100% + 8px);
+  box-sizing: border-box;
+}
+.sel.active .sel__box {
+  display: block;
+  animation: fadeInUp 500ms;
+}
+.sel__box__options {
+  display: list-item;
+  font-family: "Quicksand";
+  font-size: var(--font-m);
+  color: #838e95;
+  padding: 0.5em 1em;
+  user-select: none;
+}
+
+.sel__box__options.selected::after {
+  display: inline;
+}
+.sel__box__options:hover {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+/* ----- Selector caja/box ----- */
+.sel {
+  border-bottom: 4px solid black;
+}
+.sel--selectrol {
+  z-index: 3;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

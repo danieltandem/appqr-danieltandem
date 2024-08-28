@@ -1,0 +1,263 @@
+.footer-escritorio {
+  background-color: var(--color-primary);
+  height: 178px;
+  position: relative;
+  width: 100%;
+}
+.footer-escritorio .thumbnail-TANDEM {
+  height: 71px;
+  left: 519px;
+  object-fit: cover;
+  position: absolute;
+  top: 81px;
+  width: 957px;
+}
+.footer-escritorio .logotipo {
+  background-image: url(../../images/icons/logogeneradorqr.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 59px;
+  left: 71px;
+  position: absolute;
+  top: 20px;
+  width: 354px;
+}
+.footer-escritorio .redes-sociales {
+  align-items: center;
+  display: flex;
+  gap: 13px;
+  height: 73px;
+  left: 103px;
+  position: absolute;
+  top: 83px;
+  width: 298px;
+}
+.footer-escritorio .img {
+  align-self: stretch;
+  display: block;
+  flex: 1;
+  flex-grow: 1;
+  object-fit: cover;
+  position: relative;
+  filter: invert(100%);
+}
+.footer-escritorio .accesos-legales {
+  align-items: flex-end;
+  display: flex;
+  gap: 13px;
+  height: 24px;
+  left: 730px;
+  position: absolute;
+  top: 33px;
+  width: 564px;
+  font-size: var(--font-l);
+  margin-top: 1.4%;
+}
+.footer-escritorio .text-wrapper {
+  color: var(--text-color-2);
+  font-family: var(--font-text);
+  font-weight: 400;
+  font-size: var(--font-m);
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: fit-content;
+}
+.footer-escritorio .text-wrapper a {
+  color: var(--text-color-2);
+  font-family: var(--font-title);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: fit-content;
+  text-decoration: none;
+  cursor: pointer;
+  transition: padding-bottom 1s step-end;
+}
+.text-wrapper a:hover {
+  color: var(--text-color-3);
+}
+.subrayar {
+  position: relative;
+  display: inline-block;
+  font-size: var(--font-m);
+  padding-bottom: 3px;
+  transition: padding-bottom 0.3s ease;
+}
+.subrayar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 15%;
+  height: 2px;
+  background-color: var(--color-secondary);
+  transition: width 0.3s ease;
+}
+.subrayar:hover::after {
+  width: 100%;
+}
+.imgTT,
+.imgI,
+.imgT,
+.imgY {
+  transition: all 0.1s ease;
+}
+.imgTT:hover,
+.imgI:hover,
+.imgT:hover,
+.imgY:hover {
+  transform: scale(1.1);
+  transition: all 0.1s ease;
+}
+/* TOOLTIP REDES SOCIALES ============================================================== */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+.tooltip1,
+.tooltip2,
+.tooltip3,
+.tooltip4 {
+  visibility: hidden;
+  width: 80px;
+  color: var(--text-color-2);
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -40px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.tooltip1::after,
+.tooltip2::after,
+.tooltip3::after,
+.tooltip4::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--bg-color) transparent transparent transparent;
+}
+.tooltip-container:hover .tooltip1 {
+  visibility: visible;
+  opacity: 1;
+  background-color: rgb(25, 44, 168);
+}
+.tooltip-container:hover .tooltip2 {
+  visibility: visible;
+  opacity: 1;
+  background-color: black;
+}
+.tooltip-container:hover .tooltip3 {
+  visibility: visible;
+  opacity: 1;
+  background-color: fuchsia;
+}
+.tooltip-container:hover .tooltip4 {
+  visibility: visible;
+  opacity: 1;
+  background-color: red;
+}
+
+/*  MEDIA QUERY FOOTER ================================================================= */
+@media (max-width: 1024px) {
+  .footer-escritorio {
+    width: 1024px;
+    height: 196px;
+  }
+  .footer-escritorio .logotipo {
+    display: none;
+  }
+  .accesos-legales .text-wrapper {
+    position: relative;
+    right: 54%;
+  }
+  .imgTT {
+    content: url(../../images/icons/linkedin.png);
+    width: 60px;
+    position: relative;
+    right: 144%;
+    margin-bottom: 260%;
+  }
+  .imgT {
+    content: url(../../images/icons/twitter.png);
+    width: 60px;
+    position: relative;
+    right: 164%;
+    margin-bottom: 260%;
+  }
+  .imgI {
+    content: url(../../images/icons/insta.png);
+    width: 60px;
+    position: relative;
+    right: 184%;
+    margin-bottom: 260%;
+  }
+  .imgY {
+    content: url(../../images/icons/youtube.png);
+    width: 60px;
+    position: relative;
+    right: 204%;
+    margin-bottom: 260%;
+  }
+  .footer-escritorio .thumbnail-TANDEM {
+    left: 2.5%;
+    top: 50%;
+  }
+}
+
+@media (max-width: 412px) {
+  .footer-escritorio {
+    width: 412px;
+    height: 178px;
+  }
+  .accesos-legales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .accesos-legales .text-wrapper {
+    right: 160%;
+    top: 0.5%;
+  }
+  .imgTT {
+    content: url(../../images/icons/linkedin.png);
+    width: 50px;
+    position: relative;
+    right: 180%;
+    margin-bottom: 260%;
+  }
+  .imgT {
+    content: url(../../images/icons/twitter.png);
+    width: 40px;
+    position: relative;
+    right: 260%;
+    margin-bottom: 325%;
+  }
+  .imgI {
+    content: url(../../images/icons/insta.png);
+    width: 50px;
+    position: relative;
+    right: 235%;
+    margin-bottom: 260%;
+  }
+  .imgY {
+    content: url(../../images/icons/youtube.png);
+    width: 50px;
+    position: relative;
+    right: 265%;
+    margin-bottom: 260%;
+  }
+  .thumbnail-TANDEM img {
+    width: 200px;
+  }
+}

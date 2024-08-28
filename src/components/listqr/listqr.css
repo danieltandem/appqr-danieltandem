@@ -1,0 +1,41 @@
+.h1Qr {
+  text-align: center;
+  padding: 10px;
+}
+
+.listado-qr {
+  width: 100%;
+  display: flex;
+  gap: 1px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.tarjeta-qr {
+  text-align: center;
+  padding: 35px;
+  margin: 2em;
+  border: var(--btn-border-doble-2) var(--color-secondary);
+  border-radius: 10%;
+}
+
+.img-personal {
+  overflow: hidden;
+  cursor: auto;
+}
+
+.juntitos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  vertical-align: middle;
+}
+.juntitos > * {
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+.buscador {
+  flex-grow: 1; /* Add this to make the Buscador component take up the remaining space */
+}

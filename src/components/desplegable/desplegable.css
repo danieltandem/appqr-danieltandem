@@ -1,0 +1,18 @@
+.select {
+  padding: 10px;
+  font-size: 16px;
+  width: 250px;
+  border: var(--color-secondary) var(--btn-border-solid-1)!important;
+  border-radius: var(--btn-radius-1);
+  box-shadow: 2px 2px 2px 2px black;
+  font-family: var(--font-text);
+  outline: none;
+}
+.option{
+  border: var(--color-secondary) var(--btn-border-solid-1)!important;
+  border-radius: var(--btn-radius-1);
+  box-shadow: 2px 2px 2px 2px black;
+  font-family: var(--font-text);
+  outline: none;
+}
+

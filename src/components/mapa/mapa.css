@@ -1,0 +1,8 @@
+.mapa1{
+  z-index: 1;
+}
+@media (max-width: 1024px){
+  .mapa1{
+    height: 200px !important; 
+  }
+}

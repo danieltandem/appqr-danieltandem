@@ -1,0 +1,882 @@
+/* btnAcceso (Botón de acceso de landingPage) */
+.btnAcceso {
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--btn-bg-2);
+  color: var(--text-color-2);
+  font-family: var(--font-text);
+  font-size: var(--font-m);
+  font-weight: bold;
+  padding: var(--space-2);
+  margin: var(--space-2);
+  border: var(--color-secondary) var(--btn-border-solid-1);
+  border-radius: var(--btn-radius-1);
+  box-shadow: 0 4px 12px black;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  z-index: 2;
+  position: absolute;
+  left: 42%;
+  top: 62%;
+}
+.btnAcceso:hover {
+  opacity: 5;
+  background: var(--btn-bg-3);
+  border: var(--color-primary) var(--btn-border-solid-1);
+}
+.btnAcceso .animation {
+  border-radius: 100%;
+  animation: ripple 0.6s linear infinite;
+}
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 #ffffff1a, 0 0 0 20px #ffffff1a, 0 0 0 40px #ffffff1a,
+      0 0 0 60px #ffffff1a;
+  }
+
+  100% {
+    box-shadow: 0 0 0 20px #ffffff1a, 0 0 0 40px #ffffff1a, 0 0 0 60px #ffffff1a,
+      0 0 0 80px #ffffff00;
+  }
+}
+@media (max-width: 1024px) {
+  .btnAcceso {
+    position: absolute;
+    left: 18%;
+    top: 64%;
+    font-size: 50px;
+  }
+}
+@media (max-width: 412px) {
+  .btnAcceso {
+    position: absolute;
+    left: 9%;
+    top: 58%;
+    font-size: 24px;
+  }
+}
+/* btnAcceso (Botón de acceso de landingPage) */
+/* btnPrimary (botón rojo con hover rojo oscuro)*/
+.btnPrimary {
+  display: inline-flex;
+  cursor: pointer;
+  background-color: var(--btn-bg-2);
+  color: var(--text-color-2);
+  font-family: var(--font-text);
+  font-size: var(--font-s);
+  letter-spacing: var(--letter-space);
+  padding: var(--space-2);
+  margin: var(--space-2);
+  border: var(--color-secondary) var(--btn-border-solid-1);
+  border-radius: var(--btn-radius-1);
+  transition: 0.4s ease-in-out;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px #282828;
+  position: relative;
+}
+.btnPrimary:hover {
+  background-color: #5a0a00;
+  text-shadow: none;
+  border: #5a0a00 var(--btn-border-solid-1);
+}
+/* btnPrimary (botón rojo con hover rojo oscuro)*/
+/* btnSecondary (botón negro con hover negro) */
+.btnSecondary {
+  display: inline-flex;
+  cursor: pointer;
+  background-color: var(--btn-bg-1);
+  color: var(--text-color-1);
+  font-family: var(--font-text);
+  font-size: var(--font-s);
+  font-weight: bold;
+  letter-spacing: var(--letter-space);
+  padding: var(--space-2);
+  margin: var(--space-2);
+  border: var(--color-primary) var(--btn-border-solid-1);
+  border-radius: var(--btn-radius-1);
+  transition: 0.4s ease-in-out;
+  text-transform: uppercase;
+  position: relative;
+}
+.btnSecondary:hover {
+  background-color: var(--btn-bg-3);
+  text-shadow: none;
+  color: var(--text-color-2);
+}
+/* btnSecondary (botón negro con hover negro) */
+/* btnTertiary (botón transparente con hover blanco) */
+.btnTertiary {
+  display: inline-flex;
+  background-color: transparent;
+  color: var(--text-color-2);
+  font-family: var(--font-text);
+  font-size: var(--font-s);
+  letter-spacing: var(--letter-space);
+  padding: var(--space-2);
+  margin: var(--space-2);
+  border: var(--bg-color) var(--btn-border-solid-1);
+  border-radius: var(--btn-radius-1);
+  transition: 0.4s ease-in-out;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px #282828;
+  position: relative;
+}
+.btnTertiary:hover {
+  background-color: white;
+  text-shadow: none;
+  border: transparent var(--btn-border-solid-1);
+  color: var(--text-color-1);
+}
+/* btnTertiary (botón blanco con hover blanco) */
+/* btnClose & más (botón para cerrar ventanas o ampliar contenido (se añade X o +)) */
+.btnClose {
+  cursor: pointer;
+  background-color: transparent;
+  /* Cambiando tamaño de fuente cambia tamaño del botón */
+  font-size: var(--font-l);
+  letter-spacing: var(--letter-space);
+  margin-top: -2%;
+  border: transparent var(--btn-border-solid-1);
+  border-radius: 50%;
+  transition: 0.1s ease;
+  text-transform: uppercase;
+  text-shadow: 0.5px 1px 4px #454545;
+  position: relative;
+}
+.btnClose:hover {
+  text-shadow: 1px 1px 2px white;
+}
+.btnClose2 {
+  cursor: pointer;
+  background-color: transparent;
+  top: -30px;
+  left: -150px;
+  font-size: 28px;
+  letter-spacing: var(--letter-space);
+  border: transparent var(--btn-border-solid-1);
+  border-radius: 50%;
+  transition: 0.1s ease;
+  text-shadow: 0.5px 1px 4px #454545;
+  position: relative;
+}
+@media (max-width: 1024px) {
+  .btnClose2 {
+    margin-right: 56%;
+  }
+}
+@media (max-width: 500px) {
+  .btnClose2 {
+    left: 75%;
+  }
+}
+/* btnClose & más (botón para cerrar ventanas o ampliar contenido (se añade X o +)) */
+/* btnExit (botón para salir de la app) */
+.btnExit {
+  cursor: pointer;
+  background-color: transparent;
+  font-size: var(--font-s);
+  margin: var(--space-2);
+  border: transparent var(--btn-border-solid-1);
+  transition: 0.1s ease;
+  text-shadow: 0.5px 1px 4px #474747;
+  display: inline-flex;
+  color: var(--bg-color);
+}
+.icon-salir-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon-salir {
+  width: 40px;
+  margin: 0 auto;
+}
+.btnExit:hover {
+  text-shadow: none;
+}
+/* btnExit (botón para salir de la app) */
+/* btnBack (botón para salir de la app) */
+.btnBack {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--color-tertiary);
+  color: var(--text-color-1);
+  font-family: var(--font-text);
+  font-size: var(--font-m);
+  padding: var(--space-1);
+  margin: var(--space-2);
+  border: var(--color-primary) var(--btn-border-solid-1);
+  border-radius: var(--btn-radius-1);
+  transition: 0.2s ease-in-out;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px #282828;
+  position: relative;
+}
+.icon-volver {
+  width: 30px;
+  margin: 0 auto;
+}
+.btnBack:hover {
+  background-color: var(--btn-bg-1);
+  text-shadow: none;
+}
+/* btnBack (botón para salir de la app) */
+/* btnMasInfo (botón para más info del perfil) */
+.btnInfo {
+  cursor: pointer;
+  background-color: transparent;
+  font-size: var(--font-s);
+  margin: var(--space-2);
+  border: transparent var(--btn-border-solid-1);
+  text-shadow: 0.5px 1px 4px #474747;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s ease;
+}
+.icon-info {
+  width: 40px;
+  height: auto;
+  margin: 0 auto;
+}
+.icon-info:hover {
+  filter: drop-shadow(0.5px 0.5px 4px var(--color-secondary));
+  transform: scale(1.2);
+  transition: 0.1s ease;
+}
+.instruccion-modal-uso-qr {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.btnInfo2 {
+  cursor: pointer;
+  background-color: transparent;
+  font-size: var(--font-s);
+  margin: var(--space-2);
+  border: transparent var(--btn-border-solid-1);
+  text-shadow: 0.5px 1px 4px #474747;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s ease;
+}
+.collapse-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+.collapse-content.open {
+  max-height: 100vh;
+}
+.btnMasInfo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secondary);
+  color: var(--bg-color);
+  border: none;
+  padding: 3px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: var(--font-s);
+  transition: background-color 0.3s ease;
+}
+
+.btnMasInfo .pMasInfo {
+  margin: 0;
+  font-weight: bold;
+  color: var(--bg-color);
+}
+
+.btnMasInfo:hover {
+  background-color: var(--color-complementary-1);
+}
+/* btnMasInfo (botón para más info del perfil) */
+/* btnInfo (botón para guardar contenido) */
+.btnInfo {
+  cursor: pointer;
+  background-color: transparent;
+  font-size: var(--font-s);
+  margin: var(--space-2);
+  border: transparent var(--btn-border-solid-1);
+  text-shadow: 0.5px 1px 4px #474747;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s ease;
+}
+.icon-info {
+  width: 40px;
+  height: auto;
+  margin: 0 auto;
+}
+.icon-info:hover {
+  filter: drop-shadow(0.5px 0.5px 4px var(--color-secondary));
+  transform: scale(1.2);
+  transition: 0.1s ease;
+}
+.instruccion-modal-uso-qr {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.btnInfo2 {
+  cursor: pointer;
+  background-color: transparent;
+  font-size: var(--font-s);
+  margin: var(--space-2);
+  border: transparent var(--btn-border-solid-1);
+  text-shadow: 0.5px 1px 4px #474747;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s ease;
+}
+.collapse-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+.collapse-content.open {
+  max-height: 100vh;
+}
+/* btnInfo (botón para guardar contenido) */
+/* btnNuevoQr (botón redirige a crear QR) */
+/* btnSave (botón para guardar contenido) */
+.btnNuevoQr {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  color: var(--color-primary);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btnNuevoQr:hover {
+  background-color: var(--color-complementary-1);
+}
+
+.imgnuevoqr {
+  width: 40px;
+  height: 50px;
+  margin-right: 8px;
+}
+.pnuevoqr {
+  font-family: var(--font-text);
+}
+.btnSave {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--color-complementary-2);
+  color: var(--text-color-2);
+  font-family: var(--font-text);
+  font-size: var(--font-m);
+  padding: 6px 18px;
+  margin: var(--space-2);
+  border: #167a00 var(--btn-border-solid-1);
+  border-radius: var(--btn-radius-1);
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px #282828;
+  position: relative;
+}
+.icon-save {
+  width: 30px;
+  margin-right: 4%;
+}
+.btnSave:after {
+  content: "";
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  background-color: #333;
+  border-radius: 50%;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+.btnSave:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+  text-shadow: none;
+}
+/* btnSave (botón para guardar contenido) */
+/* btnShare (botón para editar contenido) */
+.btnShare {
+  display: inline-flex;
+  cursor: pointer;
+  background-color: var(--color-secondary);
+  color: var(--text-color-2);
+  padding: var(--space-1);
+  border: var(--bg-color) var(--btn-border-solid-1);
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px #282828;
+  position: relative;
+}
+.icon-share {
+  width: 25px;
+  margin: 0 auto;
+}
+.btnShare:after {
+  content: "";
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  background-color: black;
+  border-radius: 50%;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+.btnShare:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+  text-shadow: none;
+}
+/* btnShare (botón para editar contenido) */
+/* btnDownload (botón para descargar contenido) */
+.btnDownload {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--color-secondary);
+  color: var(--text-color-2);
+  font-family: var(--font-text);
+  font-size: var(--font-m);
+  padding: 6px;
+  margin: var(--space-2);
+  border: var(--color-primary) var(--btn-border-solid-1);
+  border-radius: var(--btn-radius-1);
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px #282828;
+  position: relative;
+}
+.icon-download {
+  width: 30px;
+  margin: 0 auto;
+}
+.btnDownload:after {
+  content: "";
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+.btnDownload:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+  text-shadow: none;
+}
+/* btnDownload (botón para descargar contenido) */
+/* btnSubmit (botón del formulario) */
+.btnSubmit {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--btn-bg-1);
+  color: var(--text-color-3);
+  font-family: var(--font-text);
+  font-size: var(--font-m);
+  padding: var(--space-2);
+  margin: var(--space-2);
+  border: var(--color-secondary) var(--btn-border-solid-1);
+  border-radius: var(--btn-radius-1);
+  transition: 0.4s ease-in-out;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px #282828;
+  position: relative;
+}
+.profile-2 {
+  width: 30px;
+  margin: 0 auto;
+}
+.btnSubmit:hover {
+  background-color: var(--btn-bg-2);
+  color: var(--text-color-2);
+  text-shadow: none;
+}
+/* btnSubmit (botón del formulario) */
+/* btnUp (botón de subir) */
+.btnUp {
+  content: url(../../images/icons/icon-Up.png);
+  cursor: pointer;
+  background-color: transparent;
+  font-size: var(--font-s);
+  margin: var(--space-2);
+  margin-bottom: 6%;
+  border: transparent var(--btn-border-solid-1);
+  text-shadow: 0.5px 1px 4px #474747;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+  width: 60px;
+}
+
+.icon-Up {
+  width: 50px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.icon-Up:hover {
+  filter: drop-shadow(0.5px 0.5px 4px var(--color-primary));
+  transition: 0.1s ease;
+}
+@media (max-width: 500px) {
+  .btnUp {
+    display: none;
+  }
+}
+/* btnUp (botón de subir) */
+/*btnSlider*/
+.toggle-switch2 {
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.slider2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: background-color 0.2s ease-in-out;
+}
+.slider2.on {
+  background-color: #4caf50;
+}
+.slider2.off {
+  background-color: #ccc;
+}
+.circle2 {
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: left 0.2s ease-in-out;
+}
+.slider2.on .circle2 {
+  left: 32px;
+}
+.slider2.off .circle2 {
+  left: 2px;
+}
+/*btnSlider*/
+/* btnProfile (botón para acceder a la página de perfil) */
+.btnProfile {
+  width: 80px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+}
+.btnProfile .icon-salir {
+  width: 100%;
+  height: auto;
+}
+/* btnProfile (botón para acceder a la página de perfil) */
+/* btnSocialMedia (botonera mixta con botones para redes sociales ubicada en modal compartir) */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wrapper .icon {
+  position: relative;
+  background: var(--color-tertiary);
+  border: var(--btn-border-solid-1) var(--color-primary);
+  border-radius: var(--btn-radius-1);
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .copyLink {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px var(--color-primary);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: black;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s;
+}
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+}
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px var(--color-primary);
+}
+.wrapper .copyLink:hover,
+.wrapper .copyLink:hover .tooltip,
+.wrapper .copyLink:hover .tooltip::before {
+  background: #650065;
+  color: var(--text-color-2);
+}
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: var(--text-color-2);
+}
+.wrapper .x:hover,
+.wrapper .x:hover .tooltip,
+.wrapper .x:hover .tooltip::before {
+  background: #0d0e0e;
+  color: var(--text-color-2);
+}
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+  background: #0a66c2;
+  color: var(--text-color-2);
+}
+.wrapper .whatsapp:hover,
+.wrapper .whatsapp:hover .tooltip,
+.wrapper .whatsapp:hover .tooltip::before {
+  background: #1eac52;
+  color: var(--text-color-2);
+}
+
+/* Mensaje de confirmación tras copiar link BTNSOCIALMEDIA*/
+.copy-notification {
+  position: fixed;
+  text-align: center;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-complementary-2);
+  color: var(--text-color-2);
+  border: var(--btn-border-solid-2) var(--color-primary);
+  padding: 10px 20px;
+  border-radius: var(--btn-radius-1);
+  font-size: var(--font-m);
+  font-family: var(--font-text);
+  z-index: 1000;
+  opacity: 0;
+  animation: slide-in-out 2s forwards;
+}
+@keyframes slide-in-out {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+}
+/* Mensaje de confirmación tras copiar link BTNSOCIALMEDIA*/
+/* btnSocialMedia (botonera mixta con botones para redes sociales ubicada en modal compartir) */
+/* BtnUserRol (Botón para editar el Rol de un usuario */
+.btnRolUser {
+  cursor: pointer;
+  background-color: transparent;
+  font-size: var(--font-m);
+  margin: var(--space-2);
+  border: transparent var(--btn-border-solid-1);
+  transition: 0.1s ease;
+  text-shadow: 0.5px 1px 4px #474747;
+  display: inline-flex;
+  color: var(--color-primary);
+}
+.btnRolUser span {
+  display: none;
+}
+.icon-role-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon-role {
+  width: 40px;
+  margin: 0 auto;
+}
+.tooltip-container-configRol {
+  position: relative;
+  display: inline-block;
+}
+.tooltip-configRol {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 90%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltip-configRol::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+.tooltip-container-configRol:hover .tooltip-configRol {
+  visibility: visible;
+  opacity: 1;
+}
+/* BtnUserRol (Botón para editar el Rol de un usuario */
+/* BtnUserEdit (Botón para editar el Rol de un usuario */
+.btnUserEdit {
+  cursor: pointer;
+  background-color: transparent;
+  font-size: var(--font-m);
+  margin: var(--space-2);
+  border: transparent var(--btn-border-solid-1);
+  transition: 0.1s ease;
+  text-shadow: 0.5px 1px 4px #474747;
+  display: inline-flex;
+  color: var(--color-primary);
+}
+.btnUserEdit span {
+  display: none;
+}
+/* BtnUserEdit (Botón para editar el Rol de un usuario */
+/* BtnDeleteUser (Botón para editar el Rol de un usuario */
+.btnUserDelete {
+  cursor: pointer;
+  background-color: transparent;
+  font-size: var(--font-m);
+  margin: var(--space-2);
+  border: transparent var(--btn-border-solid-1);
+  transition: 0.1s ease;
+  text-shadow: 0.5px 1px 4px #474747;
+  display: inline-flex;
+  color: var(--color-primary);
+}
+.btnUserDelete span {
+  display: none;
+}
+/* BtnDeleteUser (Botón para editar el Rol de un usuario */
+/* BtnNuevoQr (Botón para llevar a Crear qr */
+
+/* BtnNuevoQr (Botón para llevar a Crear qr */
+
+.fixedbtninfo {
+  position: absolute;
+}
+
+/* MEDIA QUERYS BOTONES ================================================================== */
+/* ======================================================================================= */
+
+/* BtnUserRol (Botón para editar el Rol de un usuario */
+@media (max-width: 800px) {
+  .btnRolUser {
+    background-color: var(--color-tertiary);
+    padding: 4px;
+    border: var(--btn-border-doble-2) var(--color-primary);
+    border-radius: var(--btn-radius-1);
+  }
+  .btnRolUser span {
+    display: inline;
+  }
+  .btnUserEdit {
+    background-color: var(--color-tertiary);
+    padding: 4px;
+    border: var(--btn-border-doble-2) var(--color-primary);
+    border-radius: var(--btn-radius-1);
+  }
+  .btnUserEdit span {
+    display: inline;
+  }
+  .btnUserDelete {
+    background-color: var(--color-tertiary);
+    padding: 4px;
+    border: var(--btn-border-doble-2) var(--color-primary);
+    border-radius: var(--btn-radius-1);
+  }
+  .btnUserDelete span {
+    display: inline;
+  }
+  .icon-role {
+    display: none;
+  }
+  .tooltip-container-configRol:hover .tooltip-configRol {
+    display: none;
+  }
+}
+/* BtnUserRol (Botón para editar el Rol de un usuario */
+/* Esto es para que cuando se hace en movil desaparezca el texto dejando solo el icono */
+/* .btnSubmit:hover span.texto {
+  display: none;
+} */
