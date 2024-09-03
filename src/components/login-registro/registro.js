@@ -14,25 +14,35 @@ const RegisterForm = ({ register }) => {
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
-  const handleRegistro = async () => {
+  async function handleRegistro(values, actions) {
+    setSubmitAttempted(true); // Marcar que se ha intentado enviar el formulario
+
     try {
-      const response = await fetch(
-        "http://localhost/bd-appqr/v1/user/register.php",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ name, email, password }),
-        }
-      );
-      const data = await response.json();
-      setMessage(data.message);
+      const url = 'https://danieltandem.tandempatrimonionacional.eu/bdappqr/v1/user/register.php';
+      const datos = {
+        nombre: values.name,
+        email: values.email,
+        password: values.password,
+      };
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datos)
+      });
+      if (!response.ok) {
+        throw new Error(`Error registrando usuario: ${response.status}`);
+      }
+      const respuesta = await response.json();
+      console.log('Usuario registrado con éxito:', respuesta);
+      setMessage('Usuario registrado con éxito');
+      actions.resetForm(); // Resetear el formulario después del envío exitoso
     } catch (error) {
-      console.error("Error registrando usuario", error);
-      setMessage("Error en el registro");
+      console.error('Error registrando usuario:', error);
+      setMessage(error.message);
     }
-  };
+  }
 
   const [styles, setStyles] = useState({
     length: "",
