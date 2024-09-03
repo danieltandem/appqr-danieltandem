@@ -19,7 +19,7 @@ const RegisterForm = ({ register }) => {
     setSubmitAttempted(true); // Marcar que se ha intentado enviar el formulario
 
     try {
-      const url = 'https://andreatandem.tandempatrimonionacional.eu/bdappqr/v1/user/register.php';
+      const url = 'https://danieltandem.tandempatrimonionacional.eu/bdappqr/v1/user/register.php';
       const datos = {
         nombre: values.name,
         email: values.email,
