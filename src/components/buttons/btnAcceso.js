@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import "./buttons.css"
+import "../buttons/buttons.css"
 
 function BtnAcceso() {
   return (

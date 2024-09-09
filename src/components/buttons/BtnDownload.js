@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import "../buttons/buttons.css";
 import BtnClose from "./BtnClose";
 import "../modals/modal.css";
-import BtnPrimary from "./BtnPrimary";
+import BtnPrimary from "../buttons/BtnPrimary";
 
 function BtnDownload({ handleDownload, qr }) {
   const [isOpen, setIsOpen] = useState(false);

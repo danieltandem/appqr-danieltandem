@@ -216,7 +216,9 @@
   transition: 0.2s ease-in-out;
   text-transform: uppercase;
   text-shadow: 1px 1px 4px #282828;
-  position: relative;
+  position: absolute;
+  top: 125px;
+  left: 10px;
 }
 .icon-volver {
   width: 30px;
@@ -828,6 +830,24 @@
   display: none;
 }
 /* BtnDeleteUser (Botón para editar el Rol de un usuario */
+/* BtnDeleteQR (Botón para eliminar QR) */
+.btnQRDelete {
+  cursor: pointer;
+  background-color: transparent;
+  font-size: var(--font-m);
+  margin: var(--space-2);
+  border: transparent var(--btn-border-solid-1);
+  transition: 0.1s ease;
+  text-shadow: 0.5px 1px 4px #474747;
+  display: inline-flex;
+  color: var(--color-primary);
+}
+.icon-basura {
+  width: 40px;
+  margin: 0 auto;
+}
+/* BtnDeleteQR (Botón para eliminar QR) */
+
 /* BtnNuevoQr (Botón para llevar a Crear qr */
 
 /* BtnNuevoQr (Botón para llevar a Crear qr */

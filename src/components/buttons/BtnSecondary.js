@@ -1,5 +1,5 @@
 import React from "react"
-import "./buttons.css"
+import "../buttons/buttons.css"
 
 function BtnSecondary({ onClick, children, className }) {
   return (

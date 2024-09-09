@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import "../../modals/modal.css";
 import BtnClose from "../../buttons/BtnClose";
-import BtnPrimary from "../../buttons/BtnPrimary";
+import BtnPrimary from "../../buttons/BtnPrimary"
 
 // Asegúrate de enlazar el modal con el elemento raíz de tu aplicación
 Modal.setAppElement('#___gatsby'); // Cambia este selector según el id del elemento raíz de tu aplicación
@@ -33,7 +33,7 @@ const ModalRegistro = () => {
     event.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost/bd-appqr/v1/user/soporte.php",
+        "https://vigas.tandempatrimonionacional.eu/dani/v1/user/soporte.php",
         {
           method: "POST",
           headers: {

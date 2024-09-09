@@ -18,7 +18,7 @@ const ModalForm = () => {
     }
     try {
       const response = await fetch(
-        "https://danieltandem.tandempatrimonionacional.eu/bdappqr/v1/user/register.php",
+        "https://vigas.tandempatrimonionacional.eu/dani/v1/user/register.php",
         {
           method: "POST",
           headers: {

@@ -12,7 +12,6 @@ import BtnInfoUser from "../components/buttons/BtnInfoUser"
 
 function AppSite() {
   const [userName, setUserName] = useState("")
-
   useEffect(() => {
     const storedUserName = localStorage.getItem("userName")
     if (storedUserName) {

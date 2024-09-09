@@ -18,7 +18,7 @@ function BtnUserDelete({ mailto, deleteUser }) {
       console.log("Iniciando petición para eliminar usuario", mail)
 
       const response = await fetch(
-        "http://localhost/bd-appqr/v1/user/delete-user.php",
+        "https://vigas.tandempatrimonionacional.eu/dani/v1/user/delete-user.php",
         {
           method: "DELETE",
           headers: {

@@ -28,7 +28,7 @@ const FalloContraseña = () => {
     event.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost/bd-appqr/v1/user/email.php",
+        "https://vigas.tandempatrimonionacional.eu/dani/v1/user/email.php",
         {
           method: "POST",
           headers: {

@@ -16,7 +16,7 @@ function BtnUserEdit({ mailto, updateUserName }) {
   const handleChangeName = async () => {
     try {
       const response = await fetch(
-        "http://localhost/bd-appqr/v1/user/change-name.php",
+        "https://vigas.tandempatrimonionacional.eu/dani/v1/user/change-name.php",
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

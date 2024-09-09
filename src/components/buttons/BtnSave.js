@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import "./buttons.css";
+import "../buttons/buttons.css";
 import "../modals/modal.css";
 
 function BtnSave({ qrName, qrColor, qrSize, qrValue, createdBy }) {
@@ -10,12 +10,12 @@ function BtnSave({ qrName, qrColor, qrSize, qrValue, createdBy }) {
   const handleSave = () => {
     const qrData = {
       name_qr: qrName,
-      description: qrValue,  // Asumiendo que `qrValue` es la descripción
+      description: qrValue,
       color_qr: qrColor,
       created_by: createdBy,
     };
 
-    fetch("http://localhost/bd-appqr/v1/qr/save-qr.php", {
+    fetch("https://vigas.tandempatrimonionacional.eu/dani/v1/qr/save-qr.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

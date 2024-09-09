@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import "./usuario.css"
 import { StaticImage } from "gatsby-plugin-image"
 import BtnTertiary from "../components/buttons/BtnTertiary"
-import BtnPrimary from "../buttons/BtnPrimary"
+import BtnPrimary from "../components/buttons/BtnPrimary"
 
 <div class="user">
   <BtnTertiary className="piolin">

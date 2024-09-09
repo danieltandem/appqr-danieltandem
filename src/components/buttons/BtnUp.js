@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import "./buttons.css"
+import "../buttons/buttons.css"
 
 function BtnUp({ onClick }) {
   const [isVisible, setIsVisible] = useState(false)

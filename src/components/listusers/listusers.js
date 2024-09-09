@@ -122,10 +122,7 @@ const ListUsers = ({ url }) => {
               />
               <p>{user.name}</p>
               <p>{user.role}</p>
-              <BtnUserEdit
-                mailto={user.email}
-                updateUserName={updateUserName}
-              />
+              <BtnUserEdit mailto={user.email} updateUserName={updateUserName}/>
               <BtnRolUser mailto={user.email} updateUserRole={updateUserRole} />
               <BtnUserDelete mailto={user.email} deleteUser={deleteUser} />
             </div>

@@ -18,7 +18,7 @@ const SelectRol = ({ onSelect }) => {
   const handleSelect = (option) => {
     setSelectedOption(option.label);
     setIsActive(false);
-    onSelect(option.value); // Llama a la función de selección con el valor deseado
+    onSelect(option.value);
   };
 
   return (

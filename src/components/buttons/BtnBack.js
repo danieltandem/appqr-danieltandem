@@ -18,7 +18,6 @@ function BtnBack() {
         src="../../images/icons/icon-back.png"
         alt="Atrás"
       />
-      <span>Atrás</span>
     </button>
   )
 }

@@ -11,7 +11,7 @@ const LoginForm = ({ login }) => {
   const handleLogin = async (values, { setSubmitting }) => {
     try {
       const response = await fetch(
-        "https://danieltandem.tandempatrimonionacional.eu/bdappqr/v1/user/login.php",
+        "https://vigas.tandempatrimonionacional.eu/dani/v1/user/login.php",
         {
           method: "POST",
           headers: {
@@ -64,7 +64,6 @@ const LoginForm = ({ login }) => {
               />
               <ErrorMessage name="email" />
             </div>
-
             <label htmlFor="password" className="label-login">Contraseña</label>
             <div className="password-input-container">
               <Field

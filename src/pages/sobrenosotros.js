@@ -15,7 +15,7 @@ const Sobrenosotros = () => (
       <ul className="tabs">
         <li>
           <a className="subrayar" href="#bienvenida">
-            Bienvenida de la Presidenta
+            ¿Qué es Patrimonio Nacional?
           </a>
         </li>
         <li>
@@ -25,7 +25,7 @@ const Sobrenosotros = () => (
         </li>
         <li>
           <a className="subrayar" href="#consejo">
-            Consejo de Administración
+            Monumentos más destacados
           </a>
         </li>
         <li>
@@ -37,15 +37,8 @@ const Sobrenosotros = () => (
     </div>
     <div className="container">
       <h1 className="titulo" id="bienvenida">
-        BIENVENIDA DE LA PRESIDENTA
+        ¿QUÉ ES PATRIMONIO NACIONAL?
       </h1>
-      <h3 className="subtitulo">
-        Ana de la Cueva, Presidenta de Patrimonio Nacional:
-      </h3>
-      <StaticImage
-        src="../images/sobrenosotros/presidentapatrimonio.png"
-        alt="Presidenta Patrimonio Nacional"
-      />
       <p className="parrafo">
         Somos una institución histórico-cultural única en el mundo. Cuidamos de
         más de 1.000 inmuebles, 170.000 piezas artísticas y 18.000 hectáreas de
@@ -176,44 +169,20 @@ const Sobrenosotros = () => (
         de Patrimonio Nacional una institución única en el mundo.
       </p>
       <h1 className="titulo" id="consejo">
-        CONSEJO DE ADMINISTRACIÓN
+        MONUMENTOS MÁS DESTACADOS
       </h1>
-      <h3 className="subtitulo">
-        ANA DE LA CUEVA FERNÁNDEZ <br />
-        PRESIDENTA DE PATRIMONIO NACIONAL
-      </h3>
+      <h3 className="subtitulo">PALACIO DE ARANJUEZ</h3>
       <StaticImage
-        src="../images/sobrenosotros/presidenta2.png"
-        alt="Presidenta Patrimonio Nacionak"
+        src="../images/sobrenosotros/palacioaranjuez.jpeg"
+        alt="Palacio de Aranjuez Vista Nevada"
       />
-      <p className="parrafo">
-        Es licenciada en Ciencias Económicas y Empresariales por la Universidad
-        Autónoma de Madrid en la especialidad de Economía Cuantitativa. Ha
-        desarrollado toda su carrera profesional en el Ministerio de Asuntos
-        Económicos y Transformación Digital, donde ingresó por oposición en el
-        Cuerpo de Técnicos Comerciales y Economistas del Estado en 1991.
-      </p>
-      <h3 className="subtitulo">
-        MARÍA DOLORES MENÉNDEZ COMPANY GERENTE DE PATRIMONIO NACIONAL
-      </h3>
+      <p className="parrafo"></p>
+      <h3 className="subtitulo">LA GRANJA DE SAN ILDEFONSO</h3>
       <StaticImage
-        src="../images/sobrenosotros/mariamenendez.jpg"
+        src="../images/sobrenosotros/lagranjasanildefonso.jpg"
         alt="Gerente Patrimonio Nacional"
       />
-      <p className="parrafo">
-        Es Licenciada en Ciencias Económicas y Empresariales, rama de Economía
-        de la Empresa, por la Universidad Complutense de Madrid. Funcionaria en
-        servicio activo de la Escala Técnica de Gestión de Organismos Autónomos
-        y en excedencia del Cuerpo Técnico de Auditoría y Contabilidad,
-        Executive Master in Public Administration (EMPA). ESADE. Ha trabajado
-        como Subdirectora General de Administración Financiera y Oficialía Mayor
-        en el Ministerio de Asuntos Económicos y Transformación Digital. Ha sido
-        Secretaria General del Consejo Superior de Deportes y del Instituto
-        Español de Oceanografía y Subdirectora General Adjunta de Administración
-        Económica en la Secretaría General de la Dirección General de Tráfico.
-        Miembro del Consejo de Administración del Centro para el Desarrollo
-        Tecnológico Industrial E.P.E. (CDTI).
-      </p>
+      <p className="parrafo"></p>
       <h1 className="titulo" id="actos">
         ACTOS OFICIALES E INSTITUCIONALES
       </h1>

@@ -1,5 +1,4 @@
 .user {
-  background-color: rgb(133, 133, 133);
   text-align: center;
   border: var(--btn-border-doble-2) var(--color-secondary);
   border-radius: var(--btn-radius-1);
@@ -11,9 +10,14 @@
   margin-top: 3em;
   margin-bottom: 3em;
 }
-.piolin{
+.piolin {
   height: 60px;
   width: 40%;
   justify-content: center;
   font-size: var(--font-xl);
+}
+
+.tituloUsuario {
+  text-align: center;
+  padding-top: 1em;
 }

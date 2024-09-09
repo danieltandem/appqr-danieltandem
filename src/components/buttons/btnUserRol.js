@@ -1,7 +1,7 @@
 // btnUserRol.js
 import React, { useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import "./buttons.css"
+import "../buttons/buttons.css"
 import "../modals/modal.css"
 import BtnClose from "./BtnClose"
 import SelectRol from "../selects/select-rol"
@@ -20,7 +20,7 @@ function BtnRolUser({ mailto, updateUserRole }) {
       console.log("Iniciando petición para cambiar rol", mail)
 
       const response = await fetch(
-        "http://localhost/bd-appqr/v1/user/change-role.php",
+        "https://vigas.tandempatrimonionacional.eu/dani/v1/user/change-role.php",
         {
           method: "PUT",
           headers: {

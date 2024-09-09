@@ -1,64 +1,28 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import Seo from "../components/seo"
 import Halt from "../components/header/halt"
 import "../components/css-pages/usuario.css"
 import Footer from "../components/footer/Footer"
-import { StaticImage } from "gatsby-plugin-image"
-import BtnTertiary from "../components/buttons/BtnTertiary"
 import BtnPrimary from "../components/buttons/BtnPrimary"
 import BtnBack from "../components/buttons/BtnBack"
-
 function Usuario() {
+  const [userName, setUserName] = useState("")
+  useEffect(() => {
+    const storedUserName = localStorage.getItem("userName")
+    if (storedUserName) {
+      setUserName(storedUserName)
+    }
+  }, [])
   return (
     <>
       <Halt></Halt>
       <div>
         <div class="user">
-          <BtnTertiary className="piolin">
-            <StaticImage
-              src="../images/QRs/qrnegro.png"
-              alt="Ver QR"
-              height={40}
-            ></StaticImage>
-            &nbsp;Cambiar imagen
-          </BtnTertiary>
-          <br></br>
-          <BtnTertiary className="piolin">
-            <StaticImage
-              src="../images/QRs/qrnegro.png"
-              alt="Ver QR"
-              height={40}
-            ></StaticImage>
-            &nbsp;Cambiar nombre
-          </BtnTertiary>
-          <br></br>
-          <BtnTertiary className="piolin">
-            <StaticImage
-              src="../images/QRs/qrnegro.png"
-              alt="Ver QR"
-              height={40}
-            ></StaticImage>
-            &nbsp;Cambiar contraseña
-          </BtnTertiary>
-          <br></br>
-          <BtnPrimary className="piolin">
-            <StaticImage
-              src="../images/QRs/qrnegro.png"
-              alt="Ver QR"
-              height={40}
-            ></StaticImage>
-            &nbsp;Ver mis QR
-          </BtnPrimary>
+          <p className="namePerfil">Hola, {userName}.</p>
+          {/* <BtnPrimary>Ver mis QR</BtnPrimary> */}
           <Link to="/listausuarios">
-            <BtnPrimary className="piolin">
-              <StaticImage
-                src="../images/QRs/qrnegro.png"
-                alt="Ver QR"
-                height={40}
-              ></StaticImage>
-              &nbsp;Ver usuarios
-            </BtnPrimary>
+            <BtnPrimary>Ver usuarios</BtnPrimary>
           </Link>
         </div>
       </div>
@@ -67,6 +31,5 @@ function Usuario() {
     </>
   )
 }
-
 export const Head = () => <Seo title="Usuario" />
 export default Usuario

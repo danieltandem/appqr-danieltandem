@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react"
-import "./buttons.css"
+import "../buttons/buttons.css"
 import BtnClose from "./BtnClose"
 import "../modals/modal.css"
 
 function BtnMasInfo({ mailto }) {
   const [mail] = useState(mailto)
   const [isOpen, setIsOpen] = useState(false)
-  const [userInfo, setUserInfo] = useState(null) // Estado para almacenar la información del usuario
+  const [userInfo, setUserInfo] = useState(null)
   const modalRef = useRef(null)
 
   const handleClickOutside = event => {
@@ -39,7 +39,7 @@ function BtnMasInfo({ mailto }) {
   }
 
   const fetchUserInfo = () => {
-    fetch("http://localhost/bd-appqr/v1/user/info-user.php", {
+    fetch("https://vigas.tandempatrimonionacional.eu/andres/v1/user/info-user.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

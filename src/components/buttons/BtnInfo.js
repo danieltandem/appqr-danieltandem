@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import BtnClose2 from "./BtnClose2"; // importa el componente BtnClose
-import "./buttons.css";
+import "../buttons/buttons.css";
 import "../modals/modal.css";
 
 function BtnInfo({ message }) {
