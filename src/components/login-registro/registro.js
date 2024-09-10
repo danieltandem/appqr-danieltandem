@@ -5,16 +5,9 @@ import Cuadrado from "../Cuadrado/cuadrado";
 import ContactLink from "../modals/modalregistro/contactlink";
 
 const RegisterForm = ({ register }) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleName = e => setName(e.target.value);
-  const handleEmail = e => setEmail(e.target.value);
-  const handlePassword = e => setPassword(e.target.value);
-
-  const handleRegistro = async (resetForm) => {
+  const handleRegistro = async (values, resetForm) => {
     try {
       const response = await fetch(
         "https://vigas.tandempatrimonionacional.eu/dani/v1/user/register.php",
@@ -23,7 +16,11 @@ const RegisterForm = ({ register }) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ name, email, password }),
+          body: JSON.stringify({
+            name: values.name,
+            email: values.email,
+            password: values.password,
+          }),
         }
       );
       const data = await response.json();
@@ -64,7 +61,7 @@ const RegisterForm = ({ register }) => {
   };
 
   useEffect(() => {
-    const validatePassword = () => {
+    const validatePassword = password => {
       let lengthStyle = password.length >= 8 ? stylGreen : stylRed;
       let numberStyle = numbers.some(char => password.includes(char))
         ? stylGreen
@@ -79,8 +76,7 @@ const RegisterForm = ({ register }) => {
         special: specialStyle,
       });
     };
-    validatePassword();
-  }, [password]);
+  }, []);
 
   const toggleShowPassword = () => {
     setShowPassword(prevShowPassword => !prevShowPassword);
@@ -121,14 +117,10 @@ const RegisterForm = ({ register }) => {
             .required("Campo obligatorio"),
         })}
         onSubmit={(values, { resetForm }) => {
-          // Actualizamos los valores del estado del componente
-          setName(values.name);
-          setEmail(values.email);
-          setPassword(values.password);
-          handleRegistro(resetForm); // Pasamos resetForm para resetear el formulario tras el registro
+          handleRegistro(values, resetForm); // Pasamos resetForm para resetear el formulario tras el registro
         }}
       >
-        {({ setFieldValue, touched, errors }) => (
+        {({ setFieldValue, touched, errors, values }) => (
           <Form className="register-form">
             <div className="field-group">
               <div className="name-input-container">
@@ -140,9 +132,6 @@ const RegisterForm = ({ register }) => {
                   name="name"
                   type="text"
                   placeholder="Introduce tu nombre"
-                  id="Name"
-                  value={name}
-                  onChange={handleName}
                 />
                 {touched.name && errors.name && (
                   <div className="error-message">{errors.name}</div>
@@ -157,9 +146,6 @@ const RegisterForm = ({ register }) => {
                   name="email"
                   type="email"
                   placeholder="Introduce tu email"
-                  id="email"
-                  value={email}
-                  onChange={handleEmail}
                 />
                 {touched.email && errors.email && (
                   <div className="error-message">{errors.email}</div>
@@ -178,12 +164,9 @@ const RegisterForm = ({ register }) => {
                     name="password"
                     type={showPassword ? "text" : "password"}
                     placeholder="Introduce tu Contraseña"
-                    id="password"
-                    value={password}
                     onFocus={handleInputFocus}
                     onBlur={handleInputBlur}
                     onChange={e => {
-                      setPassword(e.target.value);
                       setFieldValue("password", e.target.value);
                     }}
                   />
