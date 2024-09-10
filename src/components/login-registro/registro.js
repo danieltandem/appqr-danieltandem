@@ -14,7 +14,7 @@ const RegisterForm = ({ register }) => {
   const handleEmail = e => setEmail(e.target.value)
   const handlePassword = e => setPassword(e.target.value)
 
-  const handleRegistro = async () => {
+  const handleRegistro = async (resetForm) => {
     try {
       const response = await fetch(
         "https://vigas.tandempatrimonionacional.eu/dani/v1/user/register.php",
@@ -28,6 +28,10 @@ const RegisterForm = ({ register }) => {
       )
       const data = await response.json()
       setMessage(data.message)
+      
+      if (data.success) {
+        resetForm(); // Resetea el formulario al registrar exitosamente
+      }
     } catch (error) {
       console.error("Error registrando usuario", error)
       setMessage("Error en el registro")
@@ -116,6 +120,12 @@ const RegisterForm = ({ register }) => {
             .oneOf([Yup.ref("password"), null], "Las contraseñas no coinciden")
             .required("Campo obligatorio"),
         })}
+        onSubmit={(values, { resetForm }) => {
+          setName(values.name)
+          setEmail(values.email)
+          setPassword(values.password)
+          handleRegistro(resetForm) // Pasar resetForm a la función handleRegistro
+        }}
       >
         {({ setFieldValue, touched, errors }) => (
           <Form className="register-form">
@@ -264,7 +274,6 @@ const RegisterForm = ({ register }) => {
             <button
               type="submit"
               id="btn-enviar-registro"
-              onClick={handleRegistro}
             >
               Enviar
             </button>
