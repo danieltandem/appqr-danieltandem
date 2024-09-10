@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react"
-import { Formik, Form, Field, ErrorMessage } from "formik"
-import * as Yup from "yup"
-import Cuadrado from "../Cuadrado/cuadrado"
-import ContactLink from "../modals/modalregistro/contactlink"
+import React, { useEffect, useState } from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import Cuadrado from "../Cuadrado/cuadrado";
+import ContactLink from "../modals/modalregistro/contactlink";
 
 const RegisterForm = ({ register }) => {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [message, setMessage] = useState("")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleName = e => setName(e.target.value)
-  const handleEmail = e => setEmail(e.target.value)
-  const handlePassword = e => setPassword(e.target.value)
+  const handleName = e => setName(e.target.value);
+  const handleEmail = e => setEmail(e.target.value);
+  const handlePassword = e => setPassword(e.target.value);
 
   const handleRegistro = async (resetForm) => {
     try {
@@ -25,78 +25,78 @@ const RegisterForm = ({ register }) => {
           },
           body: JSON.stringify({ name, email, password }),
         }
-      )
-      const data = await response.json()
-      setMessage(data.message)
-      
+      );
+      const data = await response.json();
+      setMessage(data.message);
+
       if (data.success) {
-        resetForm(); // Resetea el formulario al registrar exitosamente
+        resetForm(); // Resetea el formulario si el registro fue exitoso
       }
     } catch (error) {
-      console.error("Error registrando usuario", error)
-      setMessage("Error en el registro")
+      console.error("Error registrando usuario", error);
+      setMessage("Error en el registro");
     }
-  }
+  };
 
   const [styles, setStyles] = useState({
     length: "",
     number: "",
     special: "",
-  })
-  const [showPassword, setShowPassword] = useState(false)
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-  const [showDropdown, setShowDropdown] = useState(false)
+  });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
-  const capital = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ".split("")
-  const numbers = "123456789".split("")
-  const special = "&@$%+#/*".split("")
+  const capital = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ".split("");
+  const numbers = "123456789".split("");
+  const special = "&@$%+#/*".split("");
 
   const stylGreen = {
     background: "rgba(102,255,102,0.2)",
     borderColor: "rgb(102,255,102)",
     color: "lightgreen",
-  }
+  };
 
   const stylRed = {
     background: "rgba(231,76,60,0.2)",
     borderColor: "#e74c3c",
     color: "#ff3f34",
-  }
+  };
 
   useEffect(() => {
     const validatePassword = () => {
-      let lengthStyle = password.length >= 8 ? stylGreen : stylRed
+      let lengthStyle = password.length >= 8 ? stylGreen : stylRed;
       let numberStyle = numbers.some(char => password.includes(char))
         ? stylGreen
-        : stylRed
+        : stylRed;
       let specialStyle = special.some(char => password.includes(char))
         ? stylGreen
-        : stylRed
+        : stylRed;
 
       setStyles({
         length: lengthStyle,
         number: numberStyle,
         special: specialStyle,
-      })
-    }
-    validatePassword()
-  }, [password])
+      });
+    };
+    validatePassword();
+  }, [password]);
 
   const toggleShowPassword = () => {
-    setShowPassword(prevShowPassword => !prevShowPassword)
-  }
+    setShowPassword(prevShowPassword => !prevShowPassword);
+  };
 
   const toggleShowConfirmPassword = () => {
-    setShowConfirmPassword(prevShowConfirmPassword => !prevShowConfirmPassword)
-  }
+    setShowConfirmPassword(prevShowConfirmPassword => !prevShowConfirmPassword);
+  };
 
   const handleInputFocus = () => {
-    setShowDropdown(true)
-  }
+    setShowDropdown(true);
+  };
 
   const handleInputBlur = () => {
-    setShowDropdown(false)
-  }
+    setShowDropdown(false);
+  };
 
   return (
     <div className="form-register">
@@ -110,10 +110,10 @@ const RegisterForm = ({ register }) => {
         }}
         validationSchema={Yup.object({
           name: Yup.string()
-            .min(3, "Must be at least 3 characters")
+            .min(3, "Debe tener al menos 3 caracteres")
             .required("Campo obligatorio"),
           email: Yup.string()
-            .email("Invalid email address")
+            .email("Email inválido")
             .required("Campo obligatorio"),
           password: Yup.string().required("Campo obligatorio"),
           confirmPassword: Yup.string()
@@ -121,10 +121,11 @@ const RegisterForm = ({ register }) => {
             .required("Campo obligatorio"),
         })}
         onSubmit={(values, { resetForm }) => {
-          setName(values.name)
-          setEmail(values.email)
-          setPassword(values.password)
-          handleRegistro(resetForm) // Pasar resetForm a la función handleRegistro
+          // Actualizamos los valores del estado del componente
+          setName(values.name);
+          setEmail(values.email);
+          setPassword(values.password);
+          handleRegistro(resetForm); // Pasamos resetForm para resetear el formulario tras el registro
         }}
       >
         {({ setFieldValue, touched, errors }) => (
@@ -182,9 +183,8 @@ const RegisterForm = ({ register }) => {
                     onFocus={handleInputFocus}
                     onBlur={handleInputBlur}
                     onChange={e => {
-                      setPassword(e.target.value)
-                      setFieldValue("password", e.target.value)
-                      handlePassword(e)
+                      setPassword(e.target.value);
+                      setFieldValue("password", e.target.value);
                     }}
                   />
                   <button
@@ -271,10 +271,7 @@ const RegisterForm = ({ register }) => {
             <br />
             <ContactLink />
             <br />
-            <button
-              type="submit"
-              id="btn-enviar-registro"
-            >
+            <button type="submit" id="btn-enviar-registro">
               Enviar
             </button>
             {message && <p>{message}</p>}
@@ -282,7 +279,7 @@ const RegisterForm = ({ register }) => {
         )}
       </Formik>
     </div>
-  )
-}
+  );
+};
 
-export default RegisterForm
+export default RegisterForm;
