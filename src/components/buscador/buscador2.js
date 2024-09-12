@@ -9,15 +9,17 @@ const Buscador2 = ({ onSearch }) => {
 
   useEffect(() => {
     if (query === '') {
-      setResults([]);
+      setResults([]); // Limpiar resultados si la consulta está vacía
       setErrorMessage('');
       return;
     }
 
     const fetchResults = async () => {
       try {
-        const response = await fetch(`https://vigas.tandempatrimonionacional.eu/dani/v1/qr/buscador2.php?query=${encodeURIComponent(query)}`);
-        
+        const response = await fetch(
+          `https://vigas.tandempatrimonionacional.eu/dani/v1/qr/buscador2.php?query=${encodeURIComponent(query)}`
+        );
+
         if (!response.ok) {
           throw new Error(`Error en la respuesta: ${response.statusText}`);
         }
@@ -48,7 +50,7 @@ const Buscador2 = ({ onSearch }) => {
 
   // Manejar cuando se selecciona un QR
   const handleItemClick = (qr) => {
-    setSelectedQr(qr.qr_id); // Establece el QR seleccionado
+    setSelectedQr(qr.qr_id); // Establecer el QR seleccionado
     console.log(`QR seleccionado: ${qr.qr_id}`);
 
     // Redirigir a la página del detalle del QR
