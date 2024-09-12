@@ -38,10 +38,10 @@ const Buscador2 = ({ onSearch }) => {
 
   // Cuando seleccionamos un QR, se redirige y se resalta
   const handleItemClick = (qr) => {
-    setSelectedQr(qr.qr_id); // Resaltamos el QR seleccionado
+    setSelectedQr(qr.id); // Resaltamos el QR seleccionado
 
     // Redirigir a la URL del QR seleccionado. Cambia la URL según tus necesidades.
-    window.location.href = `/detalle-qr/${qr.qr_id}`;
+    window.location.href = `/detalle-qr/${qr.id}`;
   };
 
   return (
@@ -62,11 +62,11 @@ const Buscador2 = ({ onSearch }) => {
           <ul className="buscador-results">
             {results.map((qr) => (
               <li
-                key={qr.qr_id}
-                className={`buscador-item ${selectedQr === qr.qr_id ? 'selected' : ''}`} // Resaltar el QR seleccionado
+                key={qr.id}
+                className={`buscador-item ${selectedQr === qr.id ? 'selected' : ''}`} // Resaltar el QR seleccionado
                 onClick={() => handleItemClick(qr)} // Redirigir al hacer clic
               >
-                {qr.qr_name_qr}
+                {qr.name_qr}
               </li>
             ))}
           </ul>
