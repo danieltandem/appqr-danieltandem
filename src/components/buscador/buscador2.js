@@ -3,12 +3,12 @@ import './buscador.css';
 
 const Buscador2 = ({ onSearch }) => {
   const [query, setQuery] = useState(''); // Estado para el valor de búsqueda
-  const [results, setResults] = useState([]); // Estado para almacenar resultados
-  const [selectedQr, setSelectedQr] = useState(null); // Estado para el QR seleccionado
-  const [errorMessage, setErrorMessage] = useState(''); // Estado para mensaje de error
+  const [results, setResults] = useState([]); // Estado para los resultados
+  const [selectedQr, setSelectedQr] = useState(null); // Estado para QR seleccionado
+  const [errorMessage, setErrorMessage] = useState(''); // Estado para el mensaje de error
 
   useEffect(() => {
-    // Si el input está vacío, limpiar los resultados y el mensaje de error
+    // Si no hay búsqueda, limpiar resultados y mensajes
     if (query === '') {
       setResults([]);
       setErrorMessage('');
@@ -17,41 +17,46 @@ const Buscador2 = ({ onSearch }) => {
 
     const fetchResults = async () => {
       try {
-        // Realiza la petición al backend para obtener los resultados
+        // Realiza la petición al backend
         const response = await fetch(`https://vigas.tandempatrimonionacional.eu/dani/v1/qr/buscador2.php?query=${encodeURIComponent(query)}`);
+        
+        // Verificar si la respuesta fue correcta
+        if (!response.ok) {
+          throw new Error(`Error en la respuesta: ${response.statusText}`);
+        }
+
         const result = await response.json();
+        console.log('Respuesta del servidor:', result); // Depurar la respuesta del servidor
 
-        console.log('Respuesta del servidor:', result); // Para depuración: verificar qué devuelve el servidor
-
-        // Si se encuentran resultados
+        // Si hay resultados, actualizamos el estado
         if (result.qrs && result.qrs.length > 0) {
-          setResults(result.qrs); // Actualizar los resultados
-          setErrorMessage(''); // Limpiar el mensaje de error
+          setResults(result.qrs);
+          setErrorMessage('');
         } else {
-          // Si no se encuentran resultados
-          setResults([]); 
+          // Si no hay resultados, mostrar el mensaje del backend
+          setResults([]);
           setErrorMessage(result.message || 'QR no encontrado');
         }
       } catch (error) {
-        console.error('Error al buscar los QRs:', error); // Manejar errores de red
-        setErrorMessage('Error al buscar los QR');
+        // En caso de error, mostrar un mensaje de error
+        console.error('Error al buscar los QRs:', error);
+        setErrorMessage(`Error al buscar los QR: ${error.message}`);
       }
     };
 
-    // Llamar a la función fetchResults cuando cambia el input de búsqueda
     fetchResults();
   }, [query]);
 
-  // Manejar la actualización del input de búsqueda
+  // Manejar cambios en el input de búsqueda
   const handleSearch = (event) => {
     setQuery(event.target.value); // Actualizar el valor de búsqueda
   };
 
-  // Manejar la selección de un QR
+  // Manejar selección de un QR
   const handleItemClick = (qr) => {
-    setSelectedQr(qr.qr_id); // Resaltar el QR seleccionado
+    setSelectedQr(qr.qr_id); // Marcar el QR seleccionado
 
-    // Redirigir a una nueva página (puedes cambiar esto según la lógica deseada)
+    // Redirigir a la página de detalles del QR
     window.location.href = `/detalle-qr/${qr.qr_id}`;
   };
 
@@ -65,19 +70,19 @@ const Buscador2 = ({ onSearch }) => {
         className="buscador-input"
       />
 
-      {/* Mostrar mensaje de error si existe */}
+      {/* Mostrar mensaje de error si hay alguno */}
       {errorMessage && <p className="buscador-no-results">{errorMessage}</p>}
 
-      {/* Mostrar resultados si existen */}
+      {/* Mostrar resultados si hay coincidencias */}
       {results.length > 0 && (
         <ul className="buscador-results">
           {results.map((qr) => (
             <li
               key={qr.qr_id}
-              className={`buscador-item ${selectedQr === qr.qr_id ? 'selected' : ''}`} // Añadir la clase 'selected' si está seleccionado
-              onClick={() => handleItemClick(qr)} // Redirigir al hacer clic
+              className={`buscador-item ${selectedQr === qr.qr_id ? 'selected' : ''}`}
+              onClick={() => handleItemClick(qr)}
             >
-              {qr.qr_name_qr} {/* Mostrar el nombre del QR */}
+              {qr.qr_name_qr}
             </li>
           ))}
         </ul>
