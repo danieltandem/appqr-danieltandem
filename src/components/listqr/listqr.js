@@ -1,8 +1,19 @@
+import React, { useState, useEffect, useRef } from "react"
+import QRCode from "qrcode.react"
+import "./listqr.css"
+import Buscador2 from "../buscador/buscador2"
+import BtnDownload from "../buttons/BtnDownload"
+import { toPng, toJpeg, toSvg } from "html-to-image"
+import download from "downloadjs"
+import BtnMasInfoLista from "../buttons/BtnMasInfoLista"
+import BtnQRDelete from "../buttons/BtnDeleteQR"
+import BtnNuevoQr from "../buttons/BtnNuevoQr"
+
 const ListQr = ({ url }) => {
-  const [qrs, setQrs] = useState([]);
-  const [filteredQrs, setFilteredQrs] = useState([]);
-  const [message, setMessage] = useState("");
-  const qrRefs = useRef({});
+  const [qrs, setQrs] = useState([])
+  const [filteredQrs, setFilteredQrs] = useState([])
+  const [message, setMessage] = useState("")
+  const qrRefs = useRef({})
 
   useEffect(() => {
     const fetchQrs = async () => {
@@ -12,59 +23,59 @@ const ListQr = ({ url }) => {
           headers: {
             "Content-Type": "application/json",
           },
-        });
+        })
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`HTTP error! status: ${response.status}`)
         }
-        const data = await response.json();
-        setQrs(data.qrs);
-        setFilteredQrs(data.qrs);
-        setMessage(data.message);
+        const data = await response.json()
+        setQrs(data.qrs)
+        setFilteredQrs(data.qrs)
+        setMessage(data.message)
       } catch (error) {
-        console.error("Error al buscar la lista de usuarios", error);
+        console.error("Error al buscar la lista de usuarios", error)
       }
-    };
-    fetchQrs();
-  }, [url]);
+    }
+    fetchQrs()
+  }, [url])
 
   const deleteQR = qrName => {
-    setQrs(prevQrs => prevQrs.filter(qr => qr.qr_name_qr !== qrName));
+    setQrs(prevQrs => prevQrs.filter(qr => qr.qr_name_qr !== qrName))
     setFilteredQrs(prevFilteredQrs =>
       prevFilteredQrs.filter(qr => qr.qr_name_qr !== qrName)
-    );
-  };
+    )
+  }
 
   const handleDownload = async (format, qr) => {
-    const qrElement = qrRefs.current[qr.qr_id];
+    const qrElement = qrRefs.current[qr.qr_id]
     if (qrElement) {
-      let dataUrl;
+      let dataUrl
       switch (format) {
         case "png":
-          dataUrl = await toPng(qrElement);
-          break;
+          dataUrl = await toPng(qrElement)
+          break
         case "jpeg":
-          dataUrl = await toJpeg(qrElement);
-          break;
+          dataUrl = await toJpeg(qrElement)
+          break
         case "svg":
-          dataUrl = await toSvg(qrElement);
-          break;
+          dataUrl = await toSvg(qrElement)
+          break
         default:
-          return;
+          return
       }
-      download(dataUrl, `${qr.qr_name_qr}.${format}`);
+      download(dataUrl, `${qr.qr_name_qr}.${format}`)
     }
-  };
+  }
 
   const handleSearch = query => {
     if (query === "") {
-      setFilteredQrs(qrs);
+      setFilteredQrs(qrs)
     } else {
       const filtered = qrs.filter(qr =>
         qr.qr_name_qr.toLowerCase().includes(query.toLowerCase())
-      );
-      setFilteredQrs(filtered);
+      )
+      setFilteredQrs(filtered)
     }
-  };
+  }
 
   return (
     <>
@@ -89,7 +100,7 @@ const ListQr = ({ url }) => {
         ))}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ListQr;
+export default ListQr
