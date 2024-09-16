@@ -42,11 +42,6 @@ const Buscador2 = ({ onSearch }) => {
   const handleItemClick = (qr) => {
     setSelectedQr(qr.id); // Actualizamos el estado con el ID del QR seleccionado
     onSearch(qr.name_qr);
-    const element = document.getElementById(id)
-    if (element) {
-      element.querySelector(".personal").classList.add("highlight")
-      element.scrollIntoView({ behavior: "smooth" })
-    }
   }
 
   return (

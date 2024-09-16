@@ -53,5 +53,5 @@
 
 .tarjeta-qr.highlight {
   background-color: var(--color-tertiary);
-  color: white; /* Texto blanco para el QR seleccionado */
+  color: black; /* Texto blanco para el QR seleccionado */
 }
