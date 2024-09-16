@@ -39,3 +39,8 @@
 .buscador {
   flex-grow: 1; /* Add this to make the Buscador component take up the remaining space */
 }
+.highlight {
+  background-color: var(--color-tertiary);
+  border: 1px solid #2a1f1f;
+  box-shadow: 4px 4px 4px 4px;
+}

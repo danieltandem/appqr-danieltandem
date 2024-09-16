@@ -41,8 +41,13 @@ const Buscador2 = ({ onSearch }) => {
   // Función para manejar la selección de un QR de los resultados
   const handleItemClick = (qr) => {
     setSelectedQr(qr.id); // Actualizamos el estado con el ID del QR seleccionado
-    onSearch(qr.name_qr);  // Pasamos el nombre del QR al componente padre para filtrar
-  };
+    onSearch(qr.name_qr);
+    const element = document.getElementById(id)
+    if (element) {
+      element.querySelector(".personal").classList.add("highlight")
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
 
   return (
     <div className="buscador-container">
