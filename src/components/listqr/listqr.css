@@ -39,8 +39,19 @@
 .buscador {
   flex-grow: 1; /* Add this to make the Buscador component take up the remaining space */
 }
-.highlight {
-  background-color: var(--color-tertiary);
-  border: 1px solid #2a1f1f;
-  box-shadow: 4px 4px 4px 4px;
+
+.tarjeta-qr {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.tarjeta-qr:hover {
+  background-color: #f0f0f0;
+}
+
+.tarjeta-qr.highlight {
+  background-color: #007bff; /* Fondo azul para el QR seleccionado */
+  color: white; /* Texto blanco para el QR seleccionado */
 }

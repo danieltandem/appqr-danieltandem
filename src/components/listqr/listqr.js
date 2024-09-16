@@ -13,6 +13,7 @@ const ListQr = ({ url }) => {
   const [qrs, setQrs] = useState([])
   const [filteredQrs, setFilteredQrs] = useState([])
   const [message, setMessage] = useState("")
+  const [selectedQrId, setSelectedQrId] = useState(null) // Estado para el QR seleccionado
   const qrRefs = useRef({})
 
   useEffect(() => {
@@ -74,6 +75,18 @@ const ListQr = ({ url }) => {
         qr.qr_name_qr.toLowerCase().includes(query.toLowerCase())
       )
       setFilteredQrs(filtered)
+      
+      if (filtered.length > 0) {
+        handleSelectQr(filtered[0].qr_id) // Seleccionamos el primer QR filtrado
+      }
+    }
+  }
+
+  const handleSelectQr = (qrId) => {
+    setSelectedQrId(qrId);
+    const element = qrRefs.current[qrId]; // Accedemos al elemento usando el QR id como referencia
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   }
 
@@ -84,7 +97,11 @@ const ListQr = ({ url }) => {
       <Buscador2 onSearch={handleSearch} />
       <div className="listado-qr">
         {filteredQrs.map(qr => (
-          <div key={qr.qr_id} className="tarjeta-qr">
+          <div
+            key={qr.qr_id}
+            className={`tarjeta-qr ${selectedQrId === qr.qr_id ? 'highlight' : ''}`} // Aplicamos la clase 'highlight' si es el QR seleccionado
+            onClick={() => handleSelectQr(qr.qr_id)} // Llamamos a la función de selección al hacer clic
+          >
             <div ref={el => (qrRefs.current[qr.qr_id] = el)}>
               <QRCode
                 value={qr.qr_description}
