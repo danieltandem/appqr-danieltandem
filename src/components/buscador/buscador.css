@@ -32,15 +32,3 @@
   border-bottom: none;
 }
 
-.buscador-item:hover {
-  background-color: #f0f0f0;
-}
-.buscador-item.selected {
-  background-color: #007bff; /* Color de fondo cuando está seleccionado */
-  color: white; /* Color de texto cuando está seleccionado */
-}
-.buscador-no-results {
-  color: red;
-  font-weight: bold;
-  text-align: center;
-}
