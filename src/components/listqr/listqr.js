@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import QRCode from "qrcode.react"
 import "./listqr.css"
+import "../layout.css"
 import Buscador2 from "../buscador/buscador2"
 import BtnDownload from "../buttons/BtnDownload"
 import { toPng, toJpeg, toSvg } from "html-to-image"
