@@ -1,11 +1,15 @@
-const Buscador2 = ({ onSearch }) => {
-  const [query, setQuery] = useState(''); // Búsqueda
-  const [results, setResults] = useState([]); // Resultados devueltos del backend
-  const [selectedQr, setSelectedQr] = useState(null); // QR seleccionado
+import React, { useState, useEffect } from 'react';
+import './buscador.css';
 
+const Buscador2 = ({ onSearch }) => {
+  const [query, setQuery] = useState(''); // Estado para la búsqueda (string)
+  const [results, setResults] = useState([]); // Estado para los resultados (array)
+  const [selectedQr, setSelectedQr] = useState(null); // Estado para el QR seleccionado (null o string/number)
+
+  // Hook de efecto para hacer la búsqueda cada vez que el query cambia
   useEffect(() => {
     if (query === '') {
-      setResults([]);
+      setResults([]); // Limpiamos resultados si el query está vacío
       return;
     }
 
@@ -15,28 +19,29 @@ const Buscador2 = ({ onSearch }) => {
         const result = await response.json();
 
         if (result.qrs && result.qrs.length > 0) {
-          setResults(result.qrs); // Si hay resultados, los mostramos
+          setResults(result.qrs); // Si hay resultados, los guardamos en el estado
         } else {
-          setResults([]); // Limpiar si no hay resultados
+          setResults([]); // Si no hay resultados, limpiamos el estado
         }
       } catch (error) {
         console.error('Error fetching data:', error);
+        setResults([]); // En caso de error, también limpiamos el estado
       }
     };
 
     fetchResults();
   }, [query]);
 
-  // Manejar la actualización del input de búsqueda
+  // Función para manejar la actualización del input de búsqueda
   const handleSearch = (event) => {
-    setQuery(event.target.value); // Actualizar el valor de búsqueda
-    onSearch(event.target.value); // Pasa la búsqueda al componente padre
+    setQuery(event.target.value); // Actualizamos el estado con el valor del input
+    onSearch(event.target.value); // Llamamos a la función pasada desde el padre para que se actualice la lista
   };
 
-  // Cuando seleccionamos un QR, lo marcamos como seleccionado
+  // Función para manejar la selección de un QR de los resultados
   const handleItemClick = (qr) => {
-    setSelectedQr(qr.id); // Resaltar el QR seleccionado
-    onSearch(qr.name_qr);  // Envía el nombre seleccionado al componente padre
+    setSelectedQr(qr.id); // Actualizamos el estado con el ID del QR seleccionado
+    onSearch(qr.name_qr);  // Pasamos el nombre del QR al componente padre para filtrar
   };
 
   return (
@@ -44,12 +49,12 @@ const Buscador2 = ({ onSearch }) => {
       <input
         type="text"
         placeholder="Escribe aquí para buscar"
-        value={query}
-        onChange={handleSearch}
+        value={query} // El valor del input está controlado por el estado `query`
+        onChange={handleSearch} // Se actualiza el estado cuando el usuario escribe
         className="buscador-input"
       />
       
-      {/* Si no hay resultados coincidentes */}
+      {/* Mostramos un mensaje si no hay resultados coincidentes */}
       {query && results.length === 0 ? (
         <p className="buscador-no-results">QR no encontrado</p>
       ) : (
@@ -57,11 +62,11 @@ const Buscador2 = ({ onSearch }) => {
           <ul className="buscador-results">
             {results.map((qr) => (
               <li
-                key={qr.id}
-                className={`buscador-item ${selectedQr === qr.id ? 'selected' : ''}`} // Resaltar el QR seleccionado
-                onClick={() => handleItemClick(qr)} // Resaltar y filtrar al hacer clic
+                key={qr.id} // Cada elemento de la lista necesita una clave única
+                className={`buscador-item ${selectedQr === qr.id ? 'selected' : ''}`} // Añadimos una clase si el QR está seleccionado
+                onClick={() => handleItemClick(qr)} // Seleccionamos el QR al hacer clic
               >
-                {qr.name_qr}
+                {qr.name_qr} {/* Mostramos el nombre del QR */}
               </li>
             ))}
           </ul>
