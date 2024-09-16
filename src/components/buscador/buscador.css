@@ -32,14 +32,15 @@
   border-bottom: none;
 }
 
-.buscador-no-results {
-  padding: 10px;
-  text-align: center;
-  color: #251f1f;
+.buscador-item:hover {
+  background-color: #f0f0f0;
 }
-
-/* Estilo para el elemento seleccionado */
 .buscador-item.selected {
-  background-color: #007bff; /* Cambia el fondo al color que desees */
-  color: white; /* Cambia el color del texto */
+  background-color: #007bff; /* Color de fondo cuando está seleccionado */
+  color: white; /* Color de texto cuando está seleccionado */
+}
+.buscador-no-results {
+  color: red;
+  font-weight: bold;
+  text-align: center;
 }
