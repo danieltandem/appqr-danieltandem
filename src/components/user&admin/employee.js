@@ -1,53 +1,27 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import BtnTertiary from "../components/buttons/BtnTertiary"
-import BtnPrimary from "../components/buttons/BtnPrimary"
+import "./changedatauser.css"
+import BtnPrimary from "../buttons/BtnPrimary"
 
-<div class="user">
-  <BtnTertiary className="piolin">
-    <StaticImage
-      src="../images/QRs/qrnegro.png"
-      alt="Ver QR"
-      height={40}
-    ></StaticImage>
-    &nbsp;Cambiar imagen
-  </BtnTertiary>
-  <br></br>
-  <BtnTertiary className="piolin">
-    <StaticImage
-      src="../images/QRs/qrnegro.png"
-      alt="Ver QR"
-      height={40}
-    ></StaticImage>
-    &nbsp;Cambiar nombre
-  </BtnTertiary>
-  <br></br>
-  <BtnTertiary className="piolin">
-    <StaticImage
-      src="../images/QRs/qrnegro.png"
-      alt="Ver QR"
-      height={40}
-    ></StaticImage>
-    &nbsp;Cambiar contraseña
-  </BtnTertiary>
-  <br></br>
-  <BtnPrimary className="piolin">
-    <StaticImage
-      src="../images/QRs/qrnegro.png"
-      alt="Ver QR"
-      height={40}
-    ></StaticImage>
-    &nbsp;Ver mis QR
-  </BtnPrimary>
-  <Link to="/listausuarios">
-    <BtnPrimary className="piolin">
-      <StaticImage
-        src="../images/QRs/qrnegro.png"
-        alt="Ver QR"
-        height={40}
-      ></StaticImage>
-      &nbsp;Ver usuarios
-    </BtnPrimary>
-  </Link>
-</div>
+const Employee = () => {
+  const [userName, setUserName] = useState("")
+  useEffect(() => {
+    const storedUserName = localStorage.getItem("userName")
+    if (storedUserName) {
+      setUserName(storedUserName)
+    }
+  }, [])
+  return (
+      <div>
+        <div class="user">
+          <p className="namePerfil">Hola, {userName}.</p>
+          {/* <BtnPrimary>Ver mis QR</BtnPrimary> */}
+          <Link to="/listausuarios">
+            <BtnPrimary>Ver usuarios</BtnPrimary>
+          </Link>
+        </div>
+      </div>
+  )
+}
+
+export default Employee

@@ -1,0 +1,93 @@
+.helpform-container {
+  width: 400px;
+  background: linear-gradient(#d3d3d3, #ffffff) padding-box,
+              linear-gradient(145deg, transparent 35%,#ffb71c, #ff4040) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+}
+
+.helpform-container .helpform {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.helpform-container .helpform-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.helpform-container .helpform-group .helpforminput {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: black;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid #414141;
+}
+
+.helpform-container .helpform-group .helpformtextarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  resize: none;
+  color: black;
+  height: 96px;
+  border: 1px solid #414141;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.helpform-container .helpform-group .helpforminput::placeholder {
+  opacity: 0.5;
+}
+
+.helpform-container .helpform-group .helpforminput:focus {
+  outline: none;
+  border-color: #ff1c1c;
+}
+
+.helpform-container .helpform-group .helpformtextarea:focus {
+  outline: none;
+  border-color: #ff1c1c;
+}
+
+.helpform-container .helpform-submit-btn {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: flex-start;
+  font-family: inherit;
+  color: black;
+  font-weight: 600;
+  width: 40%;
+  background: #ad3737;
+  border: 1px solid #414141;
+  padding: 12px 16px;
+  font-size: inherit;
+  gap: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.helpform-container .helpform-submit-btn:hover {
+  background-color: #929292;
+  border-color: #d70000;
+}
+
+
+

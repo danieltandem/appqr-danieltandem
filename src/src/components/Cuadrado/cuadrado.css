@@ -1,0 +1,44 @@
+.cuadrado-container {
+  border: 1px solid #000000;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: -16%;
+}
+
+.top-elements {
+  display: flex;
+  margin-top: 10px;
+}
+
+.info-text {
+  flex-grow: 1;
+  margin: 0 10px;
+  font-size: 12px;
+}
+
+.expanded-content {
+  max-height: 120;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  
+}
+
+.expanded-content.open {
+  max-height: 200px;
+}
+.textooo{
+  font-size: 12px;
+}
+.desliz{
+  margin-right: 60px;
+}
+.subray{
+  text-decoration: none;
+  color: black;
+}
+.btninfo2{
+  margin-bottom: 30px;
+}

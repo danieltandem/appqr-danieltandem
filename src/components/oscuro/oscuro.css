@@ -1,0 +1,145 @@
+:root {
+  --bg-color: #FFFFFF;
+  --text-color: #000000;
+}
+body.dark {
+  --bg-color: #202020;
+  --text-color: #FFFFFF;
+}
+.dark h1, h2, h3, h4, h5, h6 {
+  color: white;
+}
+.dark .osc {
+  color: white;
+}
+.dark p {
+  color: rgb(240, 168, 168);
+}
+.dark a {
+  color: white;
+}
+.dark .cuadrado-container {
+  border: 2px solid red;
+}
+.light h1, h2, h3, h4, h5, h6 {
+  color: black;
+}
+.light p, ul, li {
+  color: #000000;
+}
+.dark .lp {
+  color: black;
+}
+.dark label {
+  color: red;
+}
+.dark .icon-info {
+  filter: brightness(0) invert(1);
+}
+.dark .icon-perfil {
+  filter: brightness(0) invert(1);
+}
+.dark .btnInfo2 {
+  filter: brightness(0) invert(1);
+}
+.dark .btnwhite{
+  filter: brightness(0) invert(1);
+}
+.dark .tooltiposc{
+  color: black;
+}
+.dark .subrayar {
+  color: red;
+}
+.dark .hosc {
+  background-color: rgb(112, 110, 110);
+}
+.dark .posc {
+  color: white;
+  background-color: none;
+}
+.dark .eosc {
+  color: white;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+/* Estilos del switch de tema */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+}
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.cambia {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(204, 204, 204, 0.5); /* Fondo con transparencia */
+  transition: background-color 0.4s, opacity 0.4s ease;
+  border-radius: 34px;
+}
+.cambia:before {
+  content: "";
+  position: absolute;
+  height: 29px;
+  width: 35px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+/* Movimiento del círculo cuando se activa el switch */
+input:checked + .cambia:before {
+  transform: translateX(26px); /* Círculo a la derecha */
+}
+.icon-image {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.4s ease;
+}
+.icon-sun {
+  left: 8px;
+  filter: drop-shadow(0px 0px 2px rgba(255, 255, 0, 0.8)); /* Resalta el sol */
+}
+.icon-moon {
+  right: 8px;
+}
+/* Ocultar el icono inactivo */
+.hidden {
+  opacity: 0;
+}
+.theme-switch-container:hover {
+  opacity: 1;
+}
+.cambia:hover {
+  background-color: rgba(204, 204, 204, 1);
+}
+.dark .modal{
+  background-color: #797979;
+}
+
+.dark .modal p {
+  color: white;
+}
+
+.dark .sosc{
+  color: rgb(192, 0, 0);
+}
+
+.dark .modal-content{
+  background-color: #797979;
+}
