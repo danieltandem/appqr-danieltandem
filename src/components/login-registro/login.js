@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik"
 import FalloContraseña from "../modals/fallocontraseña"
 import { navigate } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
+import "./accesoregistro.css"
 const LoginForm = ({ login }) => {
   const [message, setMessage] = useState("")
   const [showPassword, setShowPassword] = useState(false)
