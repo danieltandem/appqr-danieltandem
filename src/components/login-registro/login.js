@@ -3,7 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik"
 import FalloContraseña from "../modals/fallocontraseña"
 import { navigate } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import "./accesoregistro.css"
+import BtnInfo2 from "../buttons/BtnInfo2"
+
 const LoginForm = ({ login }) => {
   const [message, setMessage] = useState("")
   const [showPassword, setShowPassword] = useState(false)
@@ -11,7 +12,6 @@ const LoginForm = ({ login }) => {
   const handleLogin = async (values, { setSubmitting }) => {
     try {
       const response = await fetch(
-        
         "https://vigas.tandempatrimonionacional.eu/vigas/v1/user/login.php",
         {
           method: "POST",
@@ -25,7 +25,7 @@ const LoginForm = ({ login }) => {
         }
       )
       const data = await response.json()
-      console.log(data); // Verifica la estructura de los datos
+      console.log(data) // Verifica la estructura de los datos
       if (data.message === "Login exitoso") {
         console.log(data.user)
         setMessage("Login exitoso")
@@ -54,6 +54,11 @@ const LoginForm = ({ login }) => {
   return (
     <div className="form-login">
       <h1 className="h1Login">Iniciar sesión</h1>
+      <button className="btnRevisor"
+        onClick={() => alert("USUARIO: admin@admin.com\nCONTRASEÑA: admin")}
+      >
+        Aquí tienes un usuario con permisos
+      </button>
       <Formik
         initialValues={{ email: "", password: "" }}
         onSubmit={handleLogin}
