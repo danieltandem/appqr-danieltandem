@@ -1,4 +1,4 @@
-body{
+body {
   background-color: var(--bg-color);
 }
 .form-login {
@@ -140,20 +140,20 @@ body{
   text-shadow: none;
   border: #5a0a00 var(--btn-border-solid-1);
 }
-.tittle-modal-add-user{
+.tittle-modal-add-user {
   color: var(--text-color-1);
 }
-.label-add-user{
+.label-add-user {
   color: var(--text-color-3);
   text-shadow: none;
   font-weight: bolder;
   font-size: large;
 }
-.input-register-add-user{
+.input-register-add-user {
   width: 250px;
   height: 30px;
 }
-.toggle-password-button-add-user{
+.toggle-password-button-add-user {
   position: absolute;
   right: 18%;
   top: 46%;
@@ -162,7 +162,7 @@ body{
   border: none;
   cursor: pointer;
 }
-.toggle-password-button-add-user-2{
+.toggle-password-button-add-user-2 {
   position: absolute;
   right: 18%;
   top: 46%;
@@ -171,7 +171,7 @@ body{
   border: none;
   cursor: pointer;
 }
-#validacion-contraseña-add-user{
+#validacion-contraseña-add-user {
   margin-top: 10px;
   font-size: medium;
   font-weight: bold;
@@ -179,26 +179,26 @@ body{
   margin-left: 46px;
   margin-top: -20px;
 }
-.close-modal-add-user{
+.close-modal-add-user {
   background-color: transparent;
   border: none;
   margin-left: 740px;
   font-size: large;
 }
-.close-modal-add-user:hover{
+.close-modal-add-user:hover {
   cursor: pointer;
 }
-@media (max-width: 1024px){
-  .auth-container{
+@media (max-width: 1024px) {
+  .auth-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-  .form-login{
+  .form-login {
     margin-left: 10px;
     margin-top: 220px;
   }
-  .form-register{
+  .form-register {
     height: auto;
     margin-left: 20px;
     margin-top: 200px;
@@ -221,40 +221,65 @@ body{
     margin-left: 30px;
     margin-bottom: 30px;
   }
-  .form-register .field-group{
+  .form-register .field-group {
     display: grid;
     grid-template-columns: 1fr;
   }
-  #eye-input-register{
+  #eye-input-register {
     margin-right: 15px;
   }
-  #eye-input-register-2{
+  #eye-input-register-2 {
     margin-left: -13px;
   }
-  .close-modal-add-user{
+  .close-modal-add-user {
     margin-left: 315px;
     margin-top: -5px;
   }
-  #register-form-modal #register-field-group{
+  #register-form-modal #register-field-group {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: auto;
   }
-  .password-modal-register{
+  .password-modal-register {
     margin-left: 20px;
   }
-  .confirm-password-modal-register{
+  .confirm-password-modal-register {
     margin-left: -291px;
     margin-top: 100px;
   }
-  .btnregistromodal{
+  .btnregistromodal {
     margin-top: -10px;
   }
-  .toggle-password-button-add-user{
+  .toggle-password-button-add-user {
     margin-right: -40px;
   }
-  .toggle-password-button-add-user-2{
+  .toggle-password-button-add-user-2 {
     margin-right: -28px;
+  }
+}
+
+/* examinadores */
+.btnRevisor {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 2px;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0% {
+    background-color: rgb(253, 205, 205);
+  }
+  50% {
+    background-color: red;
+  }
+  100% {
+    background-color: white;
   }
 }
